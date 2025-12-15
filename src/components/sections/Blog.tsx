@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, User, Clock } from "lucide-react";
 import { blogPosts, categories } from "@/data/blogData";
@@ -15,7 +14,7 @@ export const Blog = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div className="stagger-children">
+          <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sa-purple/30 bg-sa-purple/10 mb-4">
               <span className="text-xs font-semibold text-sa-purple uppercase tracking-wider">Knowledge Hub</span>
             </div>
@@ -30,10 +29,10 @@ export const Blog = () => {
             {categories.slice(0, 4).map((category, index) => (
               <button
                 key={category}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   index === 0 
-                    ? "bg-sa-gold text-primary-foreground shadow-lg shadow-sa-gold/20" 
-                    : "border border-border hover:border-sa-gold/50 text-muted-foreground hover:text-foreground hover:bg-sa-gold/5"
+                    ? "bg-sa-gold text-primary-foreground" 
+                    : "border border-border hover:border-sa-gold/50 text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {category}
@@ -46,20 +45,17 @@ export const Blog = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Featured Post */}
           {featuredPost && (
-            <Link 
-              to={`/blog/${featuredPost.slug}`}
-              className="group relative rounded-2xl border border-border/50 overflow-hidden bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-500 lg:row-span-2 hover:shadow-2xl hover:shadow-sa-gold/10"
-            >
+            <article className="group relative rounded-2xl border border-border/50 overflow-hidden bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-500 lg:row-span-2">
               <div className="relative h-64 lg:h-80 overflow-hidden">
                 <img 
                   src={featuredPost.image}
                   alt={featuredPost.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                 
                 {/* Featured badge */}
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-sa-gold/90 text-primary-foreground text-xs font-semibold animate-pulse-subtle">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-sa-gold/90 text-primary-foreground text-xs font-semibold">
                   Featured
                 </div>
               </div>
@@ -80,7 +76,7 @@ export const Blog = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-3 group-hover:text-sa-gold transition-colors duration-300">
+                <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                   {featuredPost.title}
                 </h3>
                 <p className="text-muted-foreground mb-6 line-clamp-3">
@@ -92,29 +88,27 @@ export const Blog = () => {
                     <User className="w-4 h-4" />
                     {featuredPost.author}
                   </div>
-                  <span className="inline-flex items-center gap-2 text-sa-gold font-medium group-hover:gap-3 transition-all duration-300">
+                  <Button variant="link" className="text-primary p-0 h-auto">
                     Read Article
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </Button>
                 </div>
               </div>
-            </Link>
+            </article>
           )}
 
           {/* Regular Posts */}
           <div className="space-y-6">
-            {regularPosts.map((post, index) => (
-              <Link 
+            {regularPosts.map((post) => (
+              <article 
                 key={post.id}
-                to={`/blog/${post.slug}`}
-                className="group flex gap-4 p-4 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-sa-gold/5 hover:-translate-y-1"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group flex gap-4 p-4 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-300"
               >
                 <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-lg overflow-hidden shrink-0">
                   <img 
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 
@@ -126,7 +120,7 @@ export const Blog = () => {
                     <span>{post.readTime}</span>
                   </div>
                   
-                  <h3 className="font-semibold text-foreground mb-1 line-clamp-2 group-hover:text-sa-gold transition-colors duration-300">
+                  <h3 className="font-semibold text-foreground mb-1 line-clamp-2 group-hover:text-primary transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-sm text-muted-foreground line-clamp-2 hidden sm:block">
@@ -138,16 +132,16 @@ export const Blog = () => {
                     {post.date}
                   </div>
                 </div>
-              </Link>
+              </article>
             ))}
           </div>
         </div>
 
         {/* CTA */}
         <div className="mt-12 text-center">
-          <Button variant="hero-outline" size="lg" className="group">
+          <Button variant="hero-outline" size="lg">
             View All Articles
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5" />
           </Button>
         </div>
       </div>
