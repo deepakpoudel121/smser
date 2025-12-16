@@ -20,7 +20,7 @@ const navLinks = [
     ]
   },
   { label: "Industries", href: "#industries" },
-  { label: "Blog", href: "#blog" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -68,7 +68,7 @@ export const Navbar = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 rounded-lg overflow-hidden">
               <img src={logo} alt="South Asia Logo" className="w-full h-full object-contain" />
             </div>

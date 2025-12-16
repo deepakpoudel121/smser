@@ -7,7 +7,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+977-9862546765", "9855015491", "9855015492", "9855015493"],
+    details: ["+977-9862546765"],
     action: "tel:+9779862546765",
   },
   {
