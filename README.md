@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![South Asia Logo](public/placeholder.svg)
+![South Asia Logo](public/southasia.png)
 
 **Nepal's Premier Materials Testing Laboratory**
 
