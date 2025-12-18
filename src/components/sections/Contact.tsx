@@ -122,16 +122,29 @@ ${formData.message}
               </a>
             ))}
 
-            {/* Map placeholder */}
-            <div className="relative h-48 rounded-xl overflow-hidden border border-border/50">
-              <div className="absolute inset-0 bg-gradient-to-br from-sa-purple/30 to-sa-gold/20 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-8 h-8 text-sa-gold mx-auto mb-2" />
-                  <p className="text-sm font-medium text-foreground">Chitwan, Nepal</p>
-                  <p className="text-xs text-muted-foreground">Sirjana Chowk, Bharatpur-10</p>
+            {/* Google Map */}
+            <a 
+              href="https://www.google.com/maps/place/SouthAsia+Materials+Science+and+Engineering+Research+Centre/@27.666335267711684,84.42906072496721,17z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block h-48 rounded-xl overflow-hidden border border-border/50 group cursor-pointer"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1766.8244046107905!2d84.42906072496721!3d27.666335267711684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb0032b21b43%3A0x8e775e19835dcc26!2sSouthAsia%20Materials%20Science%20and%20Engineering%20Research%20Centre!5e0!3m2!1sen!2snp!4v1766043272862!5m2!1sen!2snp"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="pointer-events-none"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-background/90 px-4 py-2 rounded-lg">
+                  <p className="text-sm font-medium text-foreground">Open in Google Maps</p>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Contact Form */}

@@ -48,7 +48,7 @@ export const About = () => {
             <div className="absolute -bottom-8 -right-8 md:right-8 glass-card rounded-xl p-6 max-w-xs">
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-3 rounded-lg bg-sa-gold/10">
-                  <p className="text-3xl font-bold text-sa-gold">6+</p>
+                  <p className="text-3xl font-bold text-sa-gold">101+</p>
                   <p className="text-xs text-muted-foreground mt-1">Core Services</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-sa-purple/10">
