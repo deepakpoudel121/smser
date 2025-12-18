@@ -29,7 +29,7 @@ const features = [
     icon: Award,
     title: "One-Stop Solution",
     description: "All testing services under one roof for convenience",
-    stat: "6+",
+    stat: "101+",
   },
   {
     icon: Zap,
