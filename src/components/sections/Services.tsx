@@ -89,6 +89,18 @@ const services = [
 ];
 
 export const Services = () => {
+  const whatsappNumber = "9779862546765";
+  const requestServiceMessage = encodeURIComponent("Hi, I would like to request testing services.");
+
+  const handleRequestService = () => {
+    window.open(`https://wa.me/${whatsappNumber}?text=${requestServiceMessage}`, '_blank');
+  };
+
+  const handleDownloadBrochure = () => {
+    // You can replace this with actual brochure download link
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi, I would like to download the service brochure.")}`, '_blank');
+  };
+
   return (
     <section id="services" className="relative py-24 bg-gradient-to-b from-background via-muted/30 to-background">
       {/* Background */}
@@ -159,11 +171,11 @@ export const Services = () => {
         {/* CTA */}
         <div className="mt-16 text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Button variant="hero" size="lg">
+            <Button variant="hero" size="lg" onClick={handleRequestService}>
               Request Testing Services
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button variant="hero-outline" size="lg">
+            <Button variant="hero-outline" size="lg" onClick={handleDownloadBrochure}>
               Download Service Brochure
             </Button>
           </div>

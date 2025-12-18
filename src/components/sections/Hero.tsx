@@ -2,6 +2,18 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Clock, Award } from "lucide-react";
 
 export const Hero = () => {
+  const whatsappNumber = "9779862546765";
+  const requestServiceMessage = encodeURIComponent("Hi, I would like to request testing services.");
+  const getQuoteMessage = encodeURIComponent("Hi, I would like to get a free quote.");
+
+  const handleRequestService = () => {
+    window.open(`https://wa.me/${whatsappNumber}?text=${requestServiceMessage}`, '_blank');
+  };
+
+  const handleGetQuote = () => {
+    window.open(`https://wa.me/${whatsappNumber}?text=${getQuoteMessage}`, '_blank');
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Animated Grid Background */}
@@ -48,11 +60,11 @@ export const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="xl" className="group">
+              <Button variant="hero" size="xl" className="group" onClick={handleRequestService}>
                 Request Testing Services
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="hero-outline" size="xl">
+              <Button variant="hero-outline" size="xl" onClick={handleGetQuote}>
                 Get a Free Quote
               </Button>
             </div>

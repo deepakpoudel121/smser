@@ -29,6 +29,18 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
+  const whatsappNumber = "9779862546765";
+  const getQuoteMessage = encodeURIComponent("Hi, I would like to get a quote for your testing services.");
+  const requestServiceMessage = encodeURIComponent("Hi, I would like to request your services.");
+
+  const handleGetQuote = () => {
+    window.open(`https://wa.me/${whatsappNumber}?text=${getQuoteMessage}`, '_blank');
+  };
+
+  const handleRequestService = () => {
+    window.open(`https://wa.me/${whatsappNumber}?text=${requestServiceMessage}`, '_blank');
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -115,10 +127,10 @@ export const Navbar = () => {
           {/* CTA Buttons & Theme Switcher */}
           <div className="hidden lg:flex items-center gap-3">
             <ThemeSwitcher />
-            <Button variant="hero-outline" size="sm">
+            <Button variant="hero-outline" size="sm" onClick={handleGetQuote}>
               Get a Quote
             </Button>
-            <Button variant="hero" size="sm">
+            <Button variant="hero" size="sm" onClick={handleRequestService}>
               Request Services
             </Button>
           </div>
@@ -165,8 +177,8 @@ export const Navbar = () => {
                 </div>
               ))}
               <div className="flex flex-col gap-2 mt-4 px-4">
-                <Button variant="hero-outline" className="w-full">Get a Quote</Button>
-                <Button variant="hero" className="w-full">Request Services</Button>
+                <Button variant="hero-outline" className="w-full" onClick={handleGetQuote}>Get a Quote</Button>
+                <Button variant="hero" className="w-full" onClick={handleRequestService}>Request Services</Button>
               </div>
             </div>
           </div>

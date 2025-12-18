@@ -32,6 +32,8 @@ const contactInfo = [
 
 export const Contact = () => {
   const { toast } = useToast();
+  const whatsappNumber = "9779862546765";
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -42,11 +44,35 @@ export const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Format the message for WhatsApp
+    const whatsappMessage = `
+*New Quote Request*
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone || "Not provided"}
+*Service Required:* ${formData.service}
+
+*Project Details:*
+${formData.message}
+    `.trim();
+
+    // Open WhatsApp with the formatted message
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+    
     toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting South Asia. We'll respond within 24 hours.",
+      title: "Redirecting to WhatsApp",
+      description: "Your message has been prepared. Please send it via WhatsApp.",
     });
+    
+    // Clear form after submission
     setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+  };
+
+  const handleScheduleCall = () => {
+    const scheduleMessage = encodeURIComponent("Hi, I would like to schedule a call to discuss my project requirements.");
+    window.open(`https://wa.me/${whatsappNumber}?text=${scheduleMessage}`, '_blank');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -202,7 +228,7 @@ export const Contact = () => {
                     Send Message
                     <Send className="w-4 h-4" />
                   </Button>
-                  <Button type="button" variant="hero-outline" size="lg">
+                  <Button type="button" variant="hero-outline" size="lg" onClick={handleScheduleCall}>
                     Schedule a Call
                     <ArrowRight className="w-4 h-4" />
                   </Button>
