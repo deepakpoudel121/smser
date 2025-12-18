@@ -88,7 +88,7 @@ export const Hero = () => {
               <div className="space-y-1">
                 <div className="flex items-center gap-2 text-sa-gold">
                   <Award className="w-5 h-5" />
-                  <span className="text-2xl font-bold text-foreground">6+</span>
+                  <span className="text-2xl font-bold text-foreground">101+</span>
                 </div>
                 <p className="text-xs text-muted-foreground">Testing Services</p>
               </div>
