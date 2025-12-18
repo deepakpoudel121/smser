@@ -124,7 +124,7 @@ ${formData.message}
 
             {/* Google Map */}
             <a 
-              href="https://www.google.com/maps/place/SouthAsia+Materials+Science+and+Engineering+Research+Centre/@27.666335267711684,84.42906072496721,17z"
+              href="https://www.google.com/maps/place/SouthAsia+Materials+Science+and+Engineering+Research+Centre/@27.6663353,84.4290607,18z/data=!4m9!1m2!2m1!1sSirjana+Chowk,+Bharatpur-10,+Chitwan,+Nepal!3m5!1s0x3994fb0032b21b43:0x8e775e19835dcc26!8m2!3d27.6672971!4d84.4298093!16s%2Fg%2F11zjkpzl9p?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="relative block h-48 rounded-xl overflow-hidden border border-border/50 group cursor-pointer"
