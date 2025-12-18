@@ -97,7 +97,7 @@ export const WhyChoose = () => {
         <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-sa-purple/30 to-sa-gold/20 border border-sa-gold/30 backdrop-blur-xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <p className="text-4xl lg:text-5xl font-bold text-foreground mb-1">6+</p>
+              <p className="text-4xl lg:text-5xl font-bold text-foreground mb-1">101+</p>
               <p className="text-sm text-muted-foreground">Testing Services</p>
             </div>
             <div className="text-center">
