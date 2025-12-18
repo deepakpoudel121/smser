@@ -84,9 +84,9 @@ export const Navbar = () => {
             <div className="relative w-12 h-12 rounded-lg overflow-hidden">
               <img src={logo} alt="South Asia Logo" className="w-full h-full object-contain" />
             </div>
-          <div className="hidden sm:block">
+                   <div className="hidden sm:block">
   <span className="text-lg font-bold tracking-tight text-foreground">SouthAsia Materials</span>
-  <p className="text-[10px] text-muted-foreground tracking-wider">LAB & ENGINEERING RESEARCH</p>
+  <p className="text-[10px] text-muted-foreground tracking-wider">SCIENCE & ENGINEERING RESEARCH</p>
 </div>
           </a>
 

@@ -36,10 +36,10 @@ export const Footer = () => {
           <div className="lg:col-span-2 space-y-6">
             <a href="#home" className="flex items-center gap-3">
               <img src={logo} alt="South Asia Logo" className="w-12 h-12 object-contain" />
-              <div>
-                <span className="text-lg font-bold text-foreground">South Asia</span>
-                <p className="text-[10px] text-muted-foreground tracking-wider">MATERIALS TESTING</p>
-              </div>
+                    <div className="hidden sm:block">
+  <span className="text-lg font-bold tracking-tight text-foreground">SouthAsia Materials</span>
+  <p className="text-[10px] text-muted-foreground tracking-wider">LAB & ENGINEERING RESEARCH</p>
+</div>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
               Southasia Materials Science and Engineering Research - Nepal's trusted partner for 
